@@ -17,7 +17,47 @@ The data provided included two tables with stock information on 12 different sto
 The goal of the assignment was to refactor created code designed to locate/retrieve the ticker, to retrieve it's total volume traded for a given year, and to return its rate of return.
 
 ## Results
-The stock performance between 2017 and 2018, as well as the execution times of the original script and the refactored script.
+In order to analyze the stock performance for 2017 and 2018, using VBA, a worksheet was created and a title and table headers created, after which the series of stock tickers were initialized.  An InputBox was used to retrieve the year for which stock analysis was preferred.
+
+```
+yearValue = InputBox("What year would you like to run the analysis on?")
+```
+
+After creating a ticker index and output arrays for the tickerVolumes and ticker starting and ending prices, a nested loop was created to retrieve and increase the tickerVolumes, based on an If-Then condition. These were designed to look for the initial ticker row, one to look for the ending row of the same ticker in order to include these in the scope of the calculation, and then to move on to the next ticker index.
+
+```
+'3b) Check if the current row is the first row with the selected tickerIndex.
+        'If  Then
+        If Cells(i, 1).Value = tickers(tickerIndex) And Cells(i - 1, 1).Value <> tickers(tickerIndex) Then
+            tickerStartingPrices(tickerIndex) = Cells(i, 6).Value
+        End If
+        
+    '3c) check if the current row is the last row with the selected ticker
+        'If the next row's ticker not match, increase the tickerIndex.
+         If Cells(i, 1).Value = tickers(tickerIndex) And Cells(i + 1, 1).Value <> tickers(tickerIndex) Then
+            tickerEndingPrices(tickerIndex) = Cells(i, 6).Value
+        End If
+         
+    '3d Increase the tickerIndex.
+        If Cells(i, 1).Value = tickers(tickerIndex) And Cells(i + 1, 1).Value <> tickers(tickerIndex) Then
+            tickerIndex = tickerIndex + 1
+        End If
+```        
+Lastly, the values gathered by the code were outputted into a table, and then formatted to provide easy-glance interpretation of stocks whose returns were performing well versus those which were not.
+
+
+
+
+
+
+
+
+
+
+
+
+
+as well as the execution times of the original script and the refactored script.
 
 
 
