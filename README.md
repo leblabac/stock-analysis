@@ -43,44 +43,30 @@ After creating a ticker index and output arrays for the tickerVolumes and ticker
             tickerIndex = tickerIndex + 1
         End If
 ```        
-Lastly, the values gathered by the code were outputted into a table, and then formatted to provide easy-glance interpretation of stocks whose returns were performing well versus those which were not.
+Lastly, the values gathered by the code were outputted into a table, and then formatted to provide easy-glance interpretation of stocks whose returns were performing well versus those which were not. In summary, between the 2017 and 2018, the majority of stocks did much better in 2017 than in 2018.
 
 
+![2017_stocks](https://user-images.githubusercontent.com/87709841/135945386-d189eb64-8d44-48fa-86c9-8a3986067c74.PNG)
+![2018_stocks](https://user-images.githubusercontent.com/87709841/135945451-58bd6521-814c-4fc2-a68d-e81ed0da1354.PNG)
 
+Returning to the main purpose of the challenge - the refactoring - the exercise showed that with the code refactored from its previous state, the performance of the analysis was increased condsiderably.
 
+Original:
+![2017 Original Performance](https://github.com/leblabac/stock-analysis/blob/main/resources/green_stocks_2017.PNG)
+Refactored: 
+![2017 Refactored_Performance](https://github.com/leblabac/stock-analysis/blob/main/resources/VBA_Challenge_2017.PNG)
 
-
-
-
-
-
-
-
-
-as well as the execution times of the original script and the refactored script.
-
-
-
-
+Original:
+![2018_Original_Performance](https://github.com/leblabac/stock-analysis/blob/main/resources/green_stocks_2018.PNG)
+Refactored:
+![2018_Refactored_Performance](https://github.com/leblabac/stock-analysis/blob/main/resources/VBA_Challenge_2018.PNG)
 
 
 ## Summary
 
-
-
-
-
-
 ### Pros and Cons of Refactoring Code
 In terms of the pros and cons of refactoring code, the pros are that: refactored code has the ability to provide good debugging of code, increase the performance of the code, and, if instruction comments are written well, the ability to understand the code in a better way.  The cons of refactoring code are that it may take time to do - and its a con if the "cost" of refactoring the code is more "expensive" than actually keeping the original code.  Also, refactoring later in the code developemnt process can lead to less testing if a deadline is approaching, so may not be desirable if that is the case.
 
-
-
-
-
-
-
-
-
-
+### Application of Pros and Cons to Stock-Analysis VBA Code
+The process of refactoring showed a definite trend toward improvement - it was much cleaner to have a single subroutine manage all the steps needed for the analysis than to have multiple that each needed to be called for a particular task. The task of walking through the code to ensure it worked was an exercise in and of itself, but provided for a good "debugging".  In this case, given the small size of the data sets for each year, the refactoring was "worth the cost" of doing the work - and I believe it would remain so if the data sets were larger, as long as the data size is taken into account sooner rather than later. In other words, our client Steve would need to have a much better sense of the quantity of years he may want to analyze at a given time.
 
